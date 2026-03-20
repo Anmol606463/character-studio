@@ -18,7 +18,7 @@ interface HumanModelProps {
 }
 
 export const HumanModel = ({ measurements, skinColor = '#e8beac', hairColor = '#3d2b1f' }: HumanModelProps) => {
-  const { scene } = useGLTF('/model.gltf');
+  const { scene } = useGLTF('/model.glb', true);
   const groupRef = useRef<THREE.Group>(null);
 
   useEffect(() => {
@@ -146,4 +146,4 @@ export const HumanModel = ({ measurements, skinColor = '#e8beac', hairColor = '#
   );
 };
 
-useGLTF.preload('/model.gltf');
+useGLTF.preload('/model.glb', true);
