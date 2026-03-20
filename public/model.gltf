@@ -92100,7 +92100,7 @@
     {
       "name": "model",
       "byteLength": 19824928,
-      "uri": "model.bin"
+      "uri": "model.dat"
     }
   ],
   "extensionsRequired": [
