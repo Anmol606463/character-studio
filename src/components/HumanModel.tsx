@@ -18,7 +18,8 @@ interface HumanModelProps {
 }
 
 export const HumanModel = ({ measurements, skinColor = '#e8beac', hairColor = '#3d2b1f' }: HumanModelProps) => {
-  const { scene } = useGLTF('/model.glb', true);
+  // Use relative path and explicit draco decoder to prevent detached ArrayBuffer errors
+  const { scene } = useGLTF('./model.glb', 'https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
   const groupRef = useRef<THREE.Group>(null);
 
   useEffect(() => {
@@ -145,5 +146,3 @@ export const HumanModel = ({ measurements, skinColor = '#e8beac', hairColor = '#
     </group>
   );
 };
-
-useGLTF.preload('/model.glb', true);
